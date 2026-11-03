@@ -1,0 +1,161 @@
+
+/* FIXED NAVBAR */
+.hospital-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+    min-height: 74px;
+    margin: 0 !important;
+    padding: 14px 28px;
+
+    background: #163832 !important;
+    color: #ffffff !important;
+
+    border: none;
+    border-bottom: 3px solid #408175;
+    border-radius: 0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+
+    z-index: 9999 !important;
+    box-sizing: border-box;
+}
+
+.hospital-navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* TITLE */
+.hospital-navbar .navbar-title {
+    margin: 0;
+    color: #ffffff !important;
+    font-size: 23px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.hospital-navbar .navbar-title i {
+    color: #8bd3bd;
+    font-size: 27px;
+}
+
+/* RIGHT SIDE */
+.hospital-navbar .navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ROLE */
+.hospital-navbar .navbar-role {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 14px;
+
+    background: #2e4540;
+    color: #ffffff;
+    border: 1px solid #54756b;
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* BUTTONS */
+.hospital-navbar .navbar-profile-btn,
+.hospital-navbar .navbar-logout-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+/* PROFILE */
+.hospital-navbar .navbar-profile-btn {
+    background: #8bd3bd;
+    color: #163832;
+    border: 1px solid #8bd3bd;
+}
+
+.hospital-navbar .navbar-profile-btn:hover {
+    background: #ffffff;
+    color: #163832;
+    border-color: #ffffff;
+}
+
+/* LOGOUT */
+.hospital-navbar .navbar-logout-btn {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #9cb9af;
+}
+
+.hospital-navbar .navbar-logout-btn:hover {
+    background: #ffffff;
+    color: #163832;
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+    .hospital-navbar {
+        padding: 12px 16px;
+    }
+
+    .hospital-navbar .navbar-title {
+        font-size: 19px;
+    }
+
+    .hospital-navbar .navbar-right {
+        gap: 8px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .hospital-navbar {
+        padding: 12px;
+    }
+
+    .hospital-navbar .container-fluid {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hospital-navbar .navbar-title {
+        font-size: 18px;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .hospital-navbar .navbar-right {
+        width: 100%;
+        justify-content: center;
+        gap: 7px;
+    }
+
+    .hospital-navbar .navbar-role {
+        padding: 7px 9px;
+        font-size: 10px;
+    }
+
+    .hospital-navbar .navbar-profile-btn,
+    .hospital-navbar .navbar-logout-btn {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}
+

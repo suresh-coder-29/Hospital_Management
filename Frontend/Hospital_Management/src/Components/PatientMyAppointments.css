@@ -1,0 +1,884 @@
+
+/* ==========================================
+   PATIENT MY APPOINTMENTS
+   Responsive Bootstrap + Custom CSS
+========================================== */
+
+.pma-page {
+    --pma-primary: #2e4540;
+    --pma-secondary: #408175;
+    --pma-accent: #b5b9f0;
+    --pma-text: #202d2a;
+    --pma-muted: #71817c;
+    --pma-border: #e5ece9;
+    --pma-background: #f5f8f7;
+
+    width: 100%;
+    min-width: 0;
+    padding: 24px;
+    color: var(--pma-text);
+    background: var(--pma-background);
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+.pma-page *,
+.pma-page *::before,
+.pma-page *::after {
+    box-sizing: border-box;
+}
+
+.pma-page button,
+.pma-page input,
+.pma-page select {
+    font: inherit;
+}
+
+.pma-page button:focus-visible,
+.pma-page input:focus-visible,
+.pma-page select:focus-visible {
+    outline: 3px solid rgba(64, 129, 117, 0.25);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.pma-header {
+    margin-bottom: 25px;
+}
+
+.pma-heading {
+    min-width: 0;
+}
+
+.pma-eyebrow {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--pma-secondary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.pma-heading h2 {
+    margin: 0;
+    color: var(--pma-primary);
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.7px;
+}
+
+.pma-heading p {
+    margin: 8px 0 0;
+    color: var(--pma-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.pma-refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-height: 43px;
+    padding: 10px 17px;
+    border: 1px solid var(--pma-secondary);
+    border-radius: 10px;
+    background: var(--pma-secondary);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.pma-refresh-btn:hover:not(:disabled) {
+    background: var(--pma-primary);
+    border-color: var(--pma-primary);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(46, 69, 64, 0.15);
+}
+
+.pma-refresh-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.pma-spin {
+    display: inline-block;
+    animation: pma-rotate 0.8s linear infinite;
+}
+
+@keyframes pma-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================
+   ERROR MESSAGE
+========================================== */
+
+.pma-error {
+    margin-bottom: 22px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.pma-error p {
+    overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   STATISTICS CARDS
+========================================== */
+
+.pma-stats {
+    margin-bottom: 26px;
+}
+
+.pma-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 100%;
+    min-height: 112px;
+    padding: 19px;
+    border: 1px solid var(--pma-border);
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(30, 65, 54, 0.035);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.pma-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(30, 65, 54, 0.08);
+}
+
+.pma-stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    font-size: 22px;
+}
+
+.pma-stat-total .pma-stat-icon {
+    color: #408175;
+    background: #e4f2ed;
+}
+
+.pma-stat-active .pma-stat-icon {
+    color: #4165ad;
+    background: #e9efff;
+}
+
+.pma-stat-completed .pma-stat-icon {
+    color: #27805a;
+    background: #e3f5e9;
+}
+
+.pma-stat-pending .pma-stat-icon {
+    color: #a56c19;
+    background: #fff2d9;
+}
+
+.pma-stat-info {
+    min-width: 0;
+}
+
+.pma-stat-info span {
+    display: block;
+    color: var(--pma-muted);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.pma-stat-info h3 {
+    margin: 6px 0 0;
+    color: var(--pma-primary);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.pma-content {
+    padding: 23px;
+    border: 1px solid var(--pma-border);
+    border-radius: 17px;
+    background: #ffffff;
+    box-shadow: 0 4px 18px rgba(30, 65, 54, 0.035);
+}
+
+.pma-content-heading {
+    margin-bottom: 20px;
+}
+
+.pma-content-heading h3 {
+    margin: 0;
+    color: var(--pma-primary);
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.pma-content-heading p {
+    margin: 6px 0 0;
+    color: var(--pma-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.pma-result-count {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #eaf3f0;
+    color: var(--pma-primary);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   SEARCH AND FILTER
+========================================== */
+
+.pma-toolbar {
+    margin-bottom: 22px;
+}
+
+.pma-search .input-group-text {
+    padding: 0 15px;
+    border-color: var(--pma-border);
+    border-right: 0;
+    border-radius: 10px 0 0 10px;
+    background: #f9fbfa;
+    color: var(--pma-secondary);
+}
+
+.pma-search .form-control {
+    min-width: 0;
+    min-height: 46px;
+    padding: 11px 12px;
+    border-color: var(--pma-border);
+    border-left: 0;
+    border-radius: 0 10px 10px 0;
+    color: var(--pma-text);
+    background: #f9fbfa;
+    font-size: 13px;
+    box-shadow: none;
+}
+
+.pma-search .form-control::placeholder {
+    color: #96a39e;
+}
+
+.pma-search .form-control:focus {
+    border-color: var(--pma-secondary);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(64, 129, 117, 0.1);
+}
+
+.pma-clear-btn {
+    border: 1px solid var(--pma-border);
+    border-left: 0;
+    border-radius: 0 10px 10px 0;
+    background: #f9fbfa;
+    color: var(--pma-muted);
+}
+
+.pma-clear-btn:hover {
+    background: #edf4f1;
+    color: var(--pma-primary);
+}
+
+.pma-filter {
+    width: 100%;
+    min-height: 46px;
+    border-color: var(--pma-border);
+    border-radius: 10px;
+    background-color: #f9fbfa;
+    color: var(--pma-text);
+    font-size: 13px;
+    box-shadow: none;
+}
+
+.pma-filter:focus {
+    border-color: var(--pma-secondary);
+    box-shadow: 0 0 0 3px rgba(64, 129, 117, 0.1);
+}
+
+/* ==========================================
+   LOADING AND EMPTY STATES
+========================================== */
+
+.pma-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    padding: 35px 18px;
+    border: 1px dashed #d9e5df;
+    border-radius: 14px;
+    background: #fbfdfc;
+    text-align: center;
+}
+
+.pma-spinner {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 18px;
+    border-width: 3px;
+    color: var(--pma-secondary);
+}
+
+.pma-state-icon {
+    margin-bottom: 15px;
+    color: #83a99d;
+    font-size: 43px;
+}
+
+.pma-state h4 {
+    margin: 0;
+    color: var(--pma-primary);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.pma-state p {
+    max-width: 400px;
+    margin: 9px 0 0;
+    color: var(--pma-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.pma-reset-btn {
+    margin-top: 17px;
+    padding: 9px 15px;
+    border: 1px solid var(--pma-secondary);
+    border-radius: 9px;
+    background: var(--pma-secondary);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.pma-reset-btn:hover {
+    border-color: var(--pma-primary);
+    background: var(--pma-primary);
+    color: #ffffff;
+}
+
+/* ==========================================
+   APPOINTMENT CARD
+========================================== */
+
+.pma-list {
+    min-width: 0;
+}
+
+.pma-card {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--pma-border);
+    border-radius: 15px;
+    background: #ffffff;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    animation: pma-card-enter 0.35s ease both;
+}
+
+.pma-card:hover {
+    border-color: #c6ddd4;
+    box-shadow: 0 7px 22px rgba(30, 65, 54, 0.055);
+}
+
+@keyframes pma-card-enter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pma-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    min-width: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #edf1ef;
+}
+
+.pma-doctor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.pma-doctor-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 53px;
+    width: 53px;
+    height: 53px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #e3f0eb, #e8eaff);
+    color: var(--pma-primary);
+    font-size: 25px;
+}
+
+.pma-doctor-info {
+    min-width: 0;
+}
+
+.pma-id {
+    display: block;
+    margin-bottom: 5px;
+    color: #82918b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    overflow-wrap: anywhere;
+}
+
+.pma-doctor-info h4 {
+    margin: 0;
+    color: var(--pma-primary);
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.pma-doctor-info p {
+    margin: 4px 0 0;
+    color: var(--pma-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   STATUS BADGES
+========================================== */
+
+.pma-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 7px;
+    max-width: 100%;
+    padding: 7px 11px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.pma-status-dot {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.pma-status-confirmed {
+    border-color: #ccebd9;
+    background: #e8f8ee;
+    color: #24774a;
+}
+
+.pma-status-pending {
+    border-color: #f2dfad;
+    background: #fff7e3;
+    color: #94650e;
+}
+
+.pma-status-completed {
+    border-color: #c8e5f8;
+    background: #eaf5ff;
+    color: #286da4;
+}
+
+.pma-status-cancelled {
+    border-color: #f2cece;
+    background: #fff0f0;
+    color: #b53838;
+}
+
+.pma-status-rescheduled {
+    border-color: #ded4ff;
+    background: #f2eeff;
+    color: #7251b6;
+}
+
+.pma-status-unknown {
+    border-color: #e1e7e4;
+    background: #f2f5f3;
+    color: #68766f;
+}
+
+/* ==========================================
+   DETAIL GRID
+========================================== */
+
+.pma-details {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pma-detail-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    height: 100%;
+    min-width: 0;
+    padding: 13px;
+    border: 1px solid #edf1ef;
+    border-radius: 11px;
+    background: #fafcfb;
+}
+
+.pma-detail-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: #e7f2ee;
+    color: var(--pma-secondary);
+    font-size: 15px;
+}
+
+.pma-detail-box > div {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 5px;
+}
+
+.pma-detail-label {
+    display: block;
+    color: var(--pma-muted);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.pma-detail-box strong {
+    display: block;
+    color: var(--pma-primary);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* ==========================================
+   APPOINTMENT REASON
+========================================== */
+
+.pma-reason {
+    padding: 15px 17px;
+    border-left: 3px solid var(--pma-secondary);
+    border-radius: 0 9px 9px 0;
+    background: #f5f9f7;
+}
+
+.pma-reason h5 {
+    margin: 0 0 7px;
+    color: var(--pma-primary);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.pma-reason h5 i {
+    color: var(--pma-secondary);
+}
+
+.pma-reason p {
+    margin: 0;
+    color: #64746d;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.pma-cancellation {
+    margin-top: 13px;
+    padding: 13px 15px;
+    border: 1px solid #f3d5d5;
+    border-radius: 10px;
+    background: #fff5f5;
+    color: #a53a3a;
+}
+
+.pma-cancellation strong {
+    font-size: 12px;
+}
+
+.pma-cancellation p {
+    margin: 6px 0 0;
+    color: #765454;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 991.98px) {
+    .pma-page {
+        padding: 20px;
+    }
+
+    .pma-content {
+        padding: 20px;
+    }
+
+    .pma-stat-card {
+        padding: 16px;
+    }
+
+    .pma-stat-icon {
+        flex-basis: 43px;
+        width: 43px;
+        height: 43px;
+        font-size: 19px;
+    }
+
+    .pma-stat-info h3 {
+        font-size: 25px;
+    }
+
+    .pma-card {
+        padding: 19px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 575.98px) {
+    .pma-page {
+        padding: 14px;
+    }
+
+    .pma-header {
+        align-items: stretch !important;
+        margin-bottom: 19px;
+    }
+
+    .pma-heading h2 {
+        font-size: 25px;
+    }
+
+    .pma-heading p {
+        font-size: 12px;
+    }
+
+    .pma-refresh-btn {
+        width: 100%;
+        min-height: 42px;
+    }
+
+    .pma-stats {
+        margin-bottom: 19px;
+    }
+
+    .pma-stat-card {
+        min-height: 90px;
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .pma-stat-info span {
+        font-size: 11px;
+    }
+
+    .pma-stat-info h3 {
+        font-size: 24px;
+    }
+
+    .pma-content {
+        padding: 15px;
+        border-radius: 13px;
+    }
+
+    .pma-content-heading h3 {
+        font-size: 17px;
+    }
+
+    .pma-content-heading p {
+        font-size: 12px;
+    }
+
+    .pma-toolbar {
+        margin-bottom: 17px;
+    }
+
+    .pma-search .form-control,
+    .pma-filter {
+        min-height: 44px;
+        font-size: 12px;
+    }
+
+    .pma-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .pma-card-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-bottom: 16px;
+    }
+
+    .pma-doctor {
+        gap: 11px;
+        width: 100%;
+    }
+
+    .pma-doctor-avatar {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        font-size: 21px;
+    }
+
+    .pma-doctor-info h4 {
+        font-size: 14px;
+    }
+
+    .pma-doctor-info p {
+        font-size: 11px;
+    }
+
+    .pma-status {
+        padding: 6px 10px;
+        font-size: 9px;
+    }
+
+    .pma-details {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .pma-detail-box {
+        padding: 11px;
+    }
+
+    .pma-reason {
+        padding: 13px;
+    }
+
+    .pma-state {
+        min-height: 225px;
+        padding: 25px 12px;
+    }
+
+    .pma-state h4 {
+        font-size: 15px;
+    }
+
+    .pma-state p {
+        font-size: 12px;
+    }
+}
+
+/* ==========================================
+   EXTRA SMALL DEVICES
+========================================== */
+
+@media (max-width: 359.98px) {
+    .pma-page {
+        padding: 10px;
+    }
+
+    .pma-content {
+        padding: 11px;
+    }
+
+    .pma-stat-card {
+        gap: 10px;
+        padding: 11px;
+    }
+
+    .pma-stat-icon {
+        flex-basis: 37px;
+        width: 37px;
+        height: 37px;
+        font-size: 17px;
+    }
+
+    .pma-stat-info span {
+        font-size: 10px;
+    }
+
+    .pma-stat-info h3 {
+        font-size: 22px;
+    }
+
+    .pma-card {
+        padding: 12px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .pma-page *,
+    .pma-page *::before,
+    .pma-page *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

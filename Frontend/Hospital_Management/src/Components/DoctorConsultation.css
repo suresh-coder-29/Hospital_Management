@@ -1,0 +1,71 @@
+.consultation-page {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 24px;
+  color: #203b35;
+}
+
+.consultation-patient,
+.consultation-form {
+  padding: 24px;
+  margin: 20px 0;
+  background: #fff;
+  border: 1px solid #dce8e4;
+  border-radius: 12px;
+}
+
+.consultation-form {
+  display: grid;
+  gap: 10px;
+}
+
+.consultation-form label {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.consultation-form textarea {
+  width: 100%;
+  min-height: 90px;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #cbdad5;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.consultation-form button,
+.consultation-back {
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #19b6a5;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.consultation-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.consultation-error {
+  color: #b42318;
+}
+
+.consultation-success {
+  color: #087443;
+}
+
+@media (max-width: 600px) {
+  .consultation-page {
+    margin: 12px;
+    padding: 12px;
+  }
+
+  .consultation-patient,
+  .consultation-form {
+    padding: 16px;
+  }
+}
